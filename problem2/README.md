@@ -12,12 +12,13 @@ pip install -r requirements.txt
 python download.py -u https://www150.statcan.gc.ca/n1/en/tbl/csv/17100009-eng.zip
 ```
 
-
-Approach 2 (not implemented)
+Approach 2
 ----------------------------
-Scrap the data from HTML using BeautifulSoup or maybe scrappy 
+For heavy JS sites use Selenium instead of BeautifulSoup and Requests in order to parse the data.
 
 
 Approach 3 (not implemented)
 ----------------------------
-For heavy JS sites use Selenium instead of BeautifulSoup and Requests in order to parse the data.
+Scrap the data from HTML using BeautifulSoup or maybe scrappy 
+
+
