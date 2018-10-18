@@ -1,19 +1,26 @@
 ![arch](img/arch.jpg)
 
+Service designed for about 3000 events per second. Further horizontal scaling also possible. 
+
 ## Tech stack
 - Python >3.6
 - Kafka
 - asyncio
 - autobahn https://autobahn.readthedocs.io/en/latest/
 
-## Rationale
+All components are Open Source projects. Python very fast for prototyping and widely used for
+development such web services. Standard Python's asynchronous framework `asyncio` with `epoll`
+event poll has sufficient performance for high loaded microservices.
 
-Web sockets used to reduce calls to web service. Just one call over HTTP for handshake the connection. Other calls performed via WebSockets, this minimizes calls to service, TCP handshakes and HTTP headers overhead.
+## Rationale behind the design
 
-Autobahn well-known framework to work with WebSockets on both sides client and server. It has a wide range of supported programming languages. Also, it has high performance and fully asynchronous implementation (via asyncio).
+**Web socket** minimizes overhead of calls to service, TCP handshakes and HTTP headers .
 
-Kafka can be thought as a сentral bus for a heterogeneous system of microservices.
+**Autobahn** - framework to work with WebSockets on both sides client and server. 
+It has a wide range of supported programming languages. 
+Also, it has high performance and fully asynchronous implementation (via `asyncio` for `python`).
 
-One of the consumers of Kafka is a reporting system (Redshift for example).
+**Kafka** can be thought as a сentral bus for a heterogeneous system of microservices.
+Reporting system (Redshift for example) can be one of the Kafka's consumers.
 
-All components are Open Source projects. Python very fast for prototyping and asyncio with epoll event poll has high performance. 
+ 

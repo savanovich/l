@@ -3,22 +3,28 @@ Problem 2
 
 Approach 1
 ----------
-Python script that will pull data from download url and output it in a csv.
 
-Usage:
+Python script which in following steps pulls data:
+- downloads zip archive
+- extracts contained CSVs
+
+### Usage
 
 ```bash
-pip install -r requirements.txt
+cd problem2
+pip install requests
 python download.py -u https://www150.statcan.gc.ca/n1/en/tbl/csv/17100009-eng.zip
 ```
 
 Approach 2
 ----------------------------
-For heavy JS sites use Selenium instead of BeautifulSoup and Requests in order to parse the data.
 
+Selenium engine based page scrapping. Steps:
 
-Approach 3 (not implemented)
-----------------------------
-Scrap the data from HTML using BeautifulSoup or maybe scrappy 
+- navigate to required page
+- open table customizations
+- select required time period
+- parse HTML
+- output to CSV
 
 
